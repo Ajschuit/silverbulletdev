@@ -359,7 +359,7 @@ event.listen {
 }
 ```
 ## Tasklist snippet
-``space-lua
+```space-lua
 -- priority: 9
 
 schuit = schuit or {}
