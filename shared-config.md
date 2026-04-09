@@ -502,7 +502,7 @@ end
 
 ## Custom Admonitions
 ```space-style
--- priority: 9
+/* priority: 10 */
 .sb-admonition[admonition="today"] {
   .sb-admonition-type * { display: none; }
   --admonition-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>');
@@ -569,12 +569,15 @@ end
 }
 ```
 
-## Main Styles
-
+## '@import's
 ```space-style
--- priority: 10
+/* priority: 1000 */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+```
 
+## Main Styles
+```space-style
+/* priority: 15 */
 .flexbuttons {
   width: 100%;
   display: flex;
