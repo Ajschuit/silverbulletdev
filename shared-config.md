@@ -629,6 +629,22 @@ html[data-theme="dark"] {
 .cm-diagnosticText {
   color: maroon;
 }
+.sb-line-h1 > a.sb-hashtag{
+  background-color: var(--editor-code-background-color);
+  color: var(--editor-code-color);
+  border: none;
+}
+.sb-line-h1 > a.sb-hashtag:hover,
+.sb-line-h1 > a.sb-hashtag:focus{
+  color: var(--editor-color);
+  border: 1px, solid var(--top-color);
+}
+.sb-line-h1 > a.sb-hashtag{
+  border: none;
+}
+.sb-h1.sb-hashtag-text{
+  font-size: 0.6em;
+}
 ```
 
 
