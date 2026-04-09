@@ -14,7 +14,6 @@ files:
 - styles/main.md
 - templates/page/daily-journal.md
 ---
-
 This is all of the config values, templates and scripts for silverbullet that I want to share between my work space and personal space. This way, my "setup" can be the same between the two.
 
 # Scripts 
