@@ -18,13 +18,12 @@ This is all of the config values, templates and scripts for silverbullet that I 
 
 # Scripts 
 
-${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name .. '/scripts']])
+${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name:gsub("shared--config","scripts"))]]}
 
 # Styles
 
-${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name .. '/styles']])
+${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name:gsub("shared--config","styles"))]]}
 
 # Templates
 
-${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name .. '/templates']])
-
+${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name:gsub("shared--config",'templates'))]]}
