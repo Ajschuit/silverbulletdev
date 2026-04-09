@@ -1,6 +1,9 @@
 ---
 name: "Library/ajschuit/shared-config"
 tags: meta/library
+files:
+- templates/page/daily-journal.md
+- templates-page-daily-journal.md
 ---
 
 This is all config values for silverbullet that I want to share between my work space and personal space. This way, my "setup" can be the same between the two.
