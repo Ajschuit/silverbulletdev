@@ -26,15 +26,17 @@ frontmatter: |
   steps: 0
  description: ""
 ---
-  
 
-# No value provided for header
+${nav or ""}
+# ${header or "No value provided for header"}
 
-${schuit.snippets.tasklist()}
+${"$"}{schuit.snippets.tasklist()}
  
 # Today's log
-- Journal page created 11:36 AM #meta
+- Journal page created ${os.date("%I:%M %p")} #meta
 - |^|
+
+
 
 
 
