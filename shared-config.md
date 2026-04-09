@@ -297,7 +297,7 @@ schuit.utilities.getPageVars = function (pagename)
 end
 ```
 
-## For re-creating the â€œforPrefixâ€
+## For re-creating the "forPrefix"
 ```space-lua
 --- priority: 10
 schuit = schuit or {}
@@ -398,7 +398,7 @@ end
 widgets = widgets or {}
 
 local mentionTemplate = template.new [==[
-* [[${_.ref}]]: â€œ${_.snippet}â€
+* [[${_.ref}]]: "${_.snippet}"
 ]==]
 
 function widgets.linkedMentions(pageName)
