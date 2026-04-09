@@ -41,4 +41,4 @@ ${"$"}{schuit.snippets.tasklist()}
 
 
 
-[[^Library/schuit/templates/page/Daily Journal|¤]]
+[[^Library/ajschuit/templates/page/daily-journal|¤]]
