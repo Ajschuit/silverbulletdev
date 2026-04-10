@@ -1,13 +1,11 @@
 import os
 from datetime import datetime 
 
-BASE_DIR = "./shared-config"
+BASE_DIR = "shared-config"
 OUTPUT_FILE = "shared-config.md"
 
 # folders you care about
-SECTIONS = sorted([d for d in os.listdir(BASE_DIR)
-    if os.path.isdir(d) and not d.startswith(".")])
-
+SECTIONS = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d)) and not d.startswith(".")]
 def collect_files():
     files = []
     for section in SECTIONS:
@@ -15,7 +13,7 @@ def collect_files():
         for root, _, filenames in os.walk(section_path):
             for f in filenames:
                 if f.endswith(".md"):
-                    rel_path = os.path.relpath(os.path.join(root, f), BASE_DIR)
+                    rel_path = os.path.join(root, f)
                     files.append(rel_path.replace("\\", "/"))
     return sorted(files)
 
@@ -24,7 +22,7 @@ def build_sections():
     for section in SECTIONS:
         title = section.capitalize()
 
-        query = f"""${{query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."{section}")]]}}"""
+        query = f"""${{query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/{section}")]]}}"""
 
         blocks.append(f"# {title}\n\n{query}\n")
 
@@ -34,7 +32,7 @@ def generate():
     files = collect_files()
     sections = build_sections()
 
-    file_list = "\n".join([f"- {f}" for f in files])
+    file_list = "\n".join([f" - {f}" for f in files])
 
     content = f"""---
 name: "Library/ajschuit/shared-config"
