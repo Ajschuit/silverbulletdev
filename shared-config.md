@@ -1,7 +1,7 @@
 ---
 name: "Library/ajschuit/shared-config"
 tags: meta/library
-last_updated: 2026-04-10 18:10:46.452832
+last_updated: 2026-04-10 18:21:36.757834
 files:
  - shared-config/scripts/config.md
  - shared-config/scripts/forprefix.md
@@ -21,17 +21,17 @@ This is all of the config values, templates and scripts for silverbullet that I 
 
 ${template.each(
     query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/scripts")]],
-    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]]]==])}
 
 # Styles
 
 ${template.each(
     query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/styles")]],
-    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]]]==])}
 
 # Templates
 
 ${template.each(
     query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/templates")]],
-    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]]]==])}
 
