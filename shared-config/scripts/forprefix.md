@@ -1,5 +1,6 @@
 ---
 displayName: [==[For re-creating the "forPrefix"]==]
+tags: meta/scripts
 ---
 
 ## For re-creating the "forPrefix"

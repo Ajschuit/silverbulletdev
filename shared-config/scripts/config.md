@@ -1,5 +1,6 @@
 ---
 displayName: "Shared config"
+tags: meta/scripts
 ---
 
 

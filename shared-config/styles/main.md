@@ -1,3 +1,7 @@
+---
+displayName: "Main stylesheet"
+tags: meta/styles
+---
 ## Main Styles
 ```space-style
 /* priority: 15 */

@@ -1,3 +1,7 @@
+---
+displayName: "Custom Admonitions"
+tags: meta/styles
+---
 
 ## Custom Admonitions
 ```space-style

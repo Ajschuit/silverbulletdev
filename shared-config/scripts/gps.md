@@ -1,5 +1,6 @@
 ---
 displayName: "Add GPS location support"
+tags: meta/scripts
 ---
 
 ## Add GPS location support

@@ -2,6 +2,7 @@
 displayName: "Journal page functions"
 status: "WIP"
 blurb: "This script creates a a bunch of functions that help with things I do frequently in my Journal pages."
+tags: meta/scripts
 ---
 
 ## Journal page functions (WIP)

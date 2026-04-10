@@ -1,5 +1,6 @@
 ---
 displayName: Snippets
+tags: meta/scripts
 ---
 ## Tasklist snippet
 ```space-lua

@@ -1,5 +1,6 @@
 ---
 displayName: Widgets
+tags: meta/scripts
 ---
 
 ## Mentions widget override

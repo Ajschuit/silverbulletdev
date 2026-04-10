@@ -1,5 +1,6 @@
 ---
 displayName: Utilities
+tags: meta/scripts
 ---
 
 ## Utilties
