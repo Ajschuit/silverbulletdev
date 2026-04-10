@@ -35,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add shared-config.auto.md
+          git add shared-config.md
           git commit -m "Auto-update config page" || echo "No changes"
           git push
