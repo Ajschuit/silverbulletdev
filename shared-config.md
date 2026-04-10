@@ -1,7 +1,7 @@
 ---
 name: "Library/ajschuit/shared-config"
 tags: meta/library
-last_updated: 2026-04-10 17:39:37.436153
+last_updated: 2026-04-10 18:10:46.452832
 files:
  - shared-config/scripts/config.md
  - shared-config/scripts/forprefix.md
@@ -17,15 +17,21 @@ files:
 ---
 This is all of the config values, templates and scripts for silverbullet that I want to share between my work space and personal space. This way, my "setup" can be the same between the two.
 
-# Templates
-
-${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/templates")]]}
-
 # Scripts
 
-${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/scripts")]]}
+${template.each(
+    query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/scripts")]],
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}
 
 # Styles
 
-${query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/styles")]]}
+${template.each(
+    query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/styles")]],
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}
+
+# Templates
+
+${template.each(
+    query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/templates")]],
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}
 
