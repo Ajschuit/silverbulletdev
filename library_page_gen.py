@@ -22,9 +22,9 @@ def build_sections():
     for section in SECTIONS:
         title = section.capitalize()
 
-        query = f"""${template.each(
+        query = f"""${{template.each(
     query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/{section}")]],
-    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}"""
+    template.new [==[# ${{displayName or ref}} [[${{ref}}|ℹ]==])}}"""
 
         blocks.append(f"# {title}\n\n{query}\n")
 
