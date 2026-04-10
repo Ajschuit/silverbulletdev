@@ -39,7 +39,7 @@ def generate():
     content = f"""---
 name: "Library/ajschuit/shared-config"
 tags: meta/library
-last_updated: {datetime.datetime.now()}
+last_updated: {datetime.now()}
 files:
 {file_list}
 ---
