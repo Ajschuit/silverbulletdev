@@ -1,11 +1,12 @@
 import os
+from datetime import datetime 
 
-BASE_DIR = "."
-OUTPUT_FILE = "shared-config.auto.md"
+BASE_DIR = "./shared-config"
+OUTPUT_FILE = "shared-config.md"
 
 # folders you care about
-SECTIONS = [d for d in os.listdir(BASE_DIR)
-    if os.path.isdir(d) and not d.startswith(".")]
+SECTIONS = sorted([d for d in os.listdir(BASE_DIR)
+    if os.path.isdir(d) and not d.startswith(".")])
 
 def collect_files():
     files = []
@@ -23,7 +24,7 @@ def build_sections():
     for section in SECTIONS:
         title = section.capitalize()
 
-        query = f"""${{query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name:gsub("shared--config","{section}"))]]}}"""
+        query = f"""${{query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."{section}")]]}}"""
 
         blocks.append(f"# {title}\n\n{query}\n")
 
@@ -38,10 +39,10 @@ def generate():
     content = f"""---
 name: "Library/ajschuit/shared-config"
 tags: meta/library
+last_updated: {datetime.datetime.now()}
 files:
 {file_list}
 ---
-
 This is all of the config values, templates and scripts for silverbullet that I want to share between my work space and personal space. This way, my "setup" can be the same between the two.
 
 {sections}
