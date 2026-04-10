@@ -5,7 +5,7 @@ BASE_DIR = "shared-config"
 OUTPUT_FILE = "shared-config.md"
 
 # folders you care about
-SECTIONS = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d)) and not d.startswith(".")]
+SECTIONS = sorted([d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d)) and not d.startswith(".")])
 def collect_files():
     files = []
     for section in SECTIONS:
@@ -22,7 +22,9 @@ def build_sections():
     for section in SECTIONS:
         title = section.capitalize()
 
-        query = f"""${{query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/{section}")]]}}"""
+        query = f"""${template.each(
+    query[[from o = index.tag "page" where o.name:startsWith(_CTX.currentPage.name.."/{section}")]],
+    template.new [==[# ${displayName or ref} [[${ref}|ℹ]==])}"""
 
         blocks.append(f"# {title}\n\n{query}\n")
 
